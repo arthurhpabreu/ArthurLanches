@@ -18,7 +18,6 @@ namespace ArthurLanches.Controllers
             var lanches = _lancheRepository.Lanches;
             var totalLanches = lanches.Count();
             ViewBag.TotalLanches = totalLanches;
-            //return View(lanches);
 
             var lanchesListViewModel = new LancheListViewModel();
             lanchesListViewModel.Lanches = _lancheRepository.Lanches;
