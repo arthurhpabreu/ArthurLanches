@@ -1,4 +1,6 @@
 ﻿using ArthurLanches.Context;
+using ArthurLanches.Repositories;
+using ArthurLanches.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace ArthurLanches;
@@ -15,6 +17,10 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddTransient<ILancheRepository, LancheRepository>();
+        services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+
 
         services.AddControllersWithViews();
     }
