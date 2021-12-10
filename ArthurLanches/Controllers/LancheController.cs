@@ -1,4 +1,5 @@
 ﻿using ArthurLanches.Repositories.Interfaces;
+using ArthurLanches.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ArthurLanches.Controllers
@@ -15,7 +16,14 @@ namespace ArthurLanches.Controllers
         public IActionResult List()
         {
             var lanches = _lancheRepository.Lanches;
-            return View(lanches);
+            var totalLanches = lanches.Count();
+            ViewBag.TotalLanches = totalLanches;
+            //return View(lanches);
+
+            var lanchesListViewModel = new LancheListViewModel();
+            lanchesListViewModel.Lanches = _lancheRepository.Lanches;
+            lanchesListViewModel.CategoriaAtual = "Categoria Atual";
+            return View(lanchesListViewModel);
         }
     }
 }
