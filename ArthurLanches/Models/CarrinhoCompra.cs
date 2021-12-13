@@ -16,7 +16,7 @@ namespace ArthurLanches.Models
         public static CarrinhoCompra GetCarrinho(IServiceProvider services)
         {
             //DEFINE UMA SESSÃO
-            ISession session = services.GetRequiredService<HttpContextAccessor>()?.HttpContext.Session;
+            ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
 
             //OBTEM UM SERVIÇO DO TIPO DO CONTEXTO
             var context = services.GetService<AppDbContext>();
