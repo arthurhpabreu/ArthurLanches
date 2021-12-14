@@ -13,7 +13,7 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/Images/logo.png" style="height:80px; width:80px" />
+                    <img src="~/Images/logo.png" style="height:90px; width:90px" />
                     Arthur Lanches
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -23,6 +23,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     @await Component.InvokeAsync("CarrinhoCompraResumo")
                     <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    @await Component.InvokeAsync("CategoriaMenu")
                     <a class="nav-link text-light" asp-area="" asp-controller="Lanche" asp-action="List">Lanches</a>
                 </div>
             </div>
