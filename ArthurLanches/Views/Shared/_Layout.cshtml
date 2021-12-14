@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ArthurLanches</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <linblockstylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ArthurLanches.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+        -webkit-transition-delay<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="~/Images/logo.png" style="height:90px; width:90px" />
@@ -21,10 +21,14 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <form class="navbar-form navbar-right" asp-controller="Lanche" asp-action="Search" method="get">
+                        <div class="form-group">
+                            <input style="margin-left:10px;" type="text" class="form-control" placeholder="Pesquisar Lanche" name="searchString" value="@ViewData["searchString"]">
+                        </div>
+                    </form>
                     @await Component.InvokeAsync("CarrinhoCompraResumo")
-                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     @await Component.InvokeAsync("CategoriaMenu")
-                    <a class="nav-link text-light" asp-area="" asp-controller="Lanche" asp-action="List">Lanches</a>
+                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 </div>
             </div>
         </nav>
