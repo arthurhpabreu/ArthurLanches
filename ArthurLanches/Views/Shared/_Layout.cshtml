@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ArthurLanches</title>
+    <title>@ViewData["Title"] ArthurLanches</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <linblockstylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ArthurLanches.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        -webkit-transition-delay<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="~/Images/logo.png" style="height:90px; width:90px" />
@@ -36,14 +36,13 @@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
-        </main>
+            <hr />
+            <footer>
+                <p><a target="_blank" >&copy; 2021 - ArthurLanches</a></p>
+            </footer>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - ArthurLanches
-        </div>
-    </footer>
+    </main>
+    </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
